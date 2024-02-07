@@ -1,0 +1,151 @@
+---
+const data = [
+  {
+    subTitle: "De Colombia pa'l mundo",
+    title: "Cruzamos las fronteras del país",
+    description:
+      "Y llevamos a Latinoamérica lo mejor de nuestro agro con De Colombia pa'l mundo. Disponible en Discovery Channel y HBO Max.",
+    image:
+      "https://cdn.dynamicyield.com/api/8775742/images/101a891c3859f__homegenericocard1_690x236.jpg",
+    button: "Míralo ya",
+    color: "#f5b6cd",
+    href: "https://www.hbomax.com/co/es/feature/urn:hbo:feature:GZVT6EQKGjpaQVgEAABoe?countryRedirect=1",
+  },
+];
+const secondary = [
+  {
+    subTitle: "Tu360Compras",
+    title: "Lanzamiento Samsung Galaxy S24",
+    description:
+      "Descubre la última innovación. Lleva el nuevo Galaxy sin pagar intereses de 2 a 12 cuotas, más 5.000 Puntos Colombia. *AplicanTyC",
+    image:
+      "https://cdn.dynamicyield.com/api/8775742/images/2e709a06923dd__card_2.png",
+    button: "Conoce más",
+    color: "#00c389",
+  },
+  {
+    subTitle: "Seguro integral para cáncer",
+    title: "Asegúrate contra todo tipo de cáncer",
+    description:
+      "El seguro integral para cáncer te da una indemnización económica que usas como quieras en caso de ser diagnosticado",
+    image:
+      "https://cdn.dynamicyield.com/api/8775742/images/2152008fcddaa__microsoftteams-image_5.png",
+    button: "Descubre más",
+    color: "#fdda24",
+  },
+];
+---
+
+<section class="flex flex-col px-40 py-10 w-full">
+  <h3 class="mb-2 pt-5 pb-5 pl-3.5">Pensando en ti te recomendamos</h3>
+  <section class="flex w-full gap-4 px-3.5">
+    {
+      data.map((dato) => (
+        <div class="flex lg:w-1/2 w-full">
+          <div style={`background-color: ${dato.color}`}>
+            <div>
+              <img
+                class="h-48"
+                src={dato.image}
+                alt={`extraido de ${dato.title}`}
+              />
+            </div>
+            <div class="flex flex-col h-full box-border">
+              <div class="p-5 container-text">
+                <h4>{dato.subTitle}</h4>
+                <h2 class="pb-2">{dato.title}</h2>
+                <p class="mb-2">{dato.description}</p>
+              </div>
+              <div class="flex items-end py-3 px-5">
+                <span  class="py-1 px-3">
+                  <a href={dato.href}>{dato.button}</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+    {
+      secondary.map((dato) => (
+        <div class="flex w-full lg:w-1/4">
+          <div style={`background-color: ${dato.color}`}>
+            <div>
+              <img
+                class="h-48"
+                src={dato.image}
+                alt={`extraido de ${dato.title}`}
+              />
+            </div>
+            <div class="">
+              <div class="container-text p-5">
+                <h4>{dato.subTitle}</h4>
+                <h2 class="titleSecondary pb-2">{dato.title}</h2>
+                <p class="descriptionSecondary">{dato.description}</p>
+              </div>
+              <div class="py-3 px-5 flex items-end">
+                <span class="py-1 px-3">
+                  <a href="#">{dato.button}</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </section>
+</section>
+<style>
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+  .container-text{
+    height: 180px;
+  }
+  h3 {
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #2c2a29;
+    letter-spacing: -0.6px;
+    font-family: "OpenSans";
+  }
+  h4 {
+    font-size: 14px;
+    font-weight: 18px;
+    font-weight: 400;
+    color: #000000;
+  }
+  h2 {
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #000000;
+  }
+  p {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #000000;
+  }
+  .titleSecondary {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.3px;
+  }
+  span{
+    border: 1px solid #292929;
+    border-radius: 25px;
+    
+  }
+  span:hover a{
+    color: #05386b;
+  }
+  a{
+    font-weight: 700;
+    color: #292929;
+  }
+</style>
