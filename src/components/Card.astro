@@ -1,61 +1,148 @@
 ---
-interface Props {
-	title: string;
-	body: string;
-	href: string;
-}
-
-const { href, title, body } = Astro.props;
+const { data, secondary, title } = Astro.props
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<section class="flex flex-col px-40 py-10 w-full 2xl:px-96">
+  <h3 class="mb-2 pt-5 pb-5 ">{title}</h3>
+  <section class="flex w-full gap-4 ">
+    {
+      data.map((dato: { color: any; image: string | null | undefined; title: unknown; subTitle: unknown; description: unknown; href: string | URL | null | undefined; button: unknown, id: string, id2: string, id3: string, }) => (
+        <div class="flex lg:w-1/2 w-full">
+          <div style={`background-color: ${dato.color}`} id={dato.id}>
+            <div>
+              <img
+                class="h-48"
+                src={dato.image}
+                alt={`extraido de ${dato.title}`}
+              />
+            </div>
+            <div class="flex flex-col h-full box-border" id={dato.id2}>
+              <div class="p-5 container-text" id={dato.id3}>
+                <h4>{dato.subTitle}</h4>
+                <h2 class="pb-4">{dato.title}</h2>
+                <p class="mb-2">{dato.description}</p>
+              </div>
+              <div class="flex items-end py-3 px-5">
+                <span  class="py-1 px-3">
+                  <a href={dato.href}>{dato.button}</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+    {
+      secondary.map((dato: { color: any; image: string | null | undefined; title: unknown; subTitle: unknown; description: unknown; button: unknown, imageStyle: string, id: string , id2: string }) => (
+        <div class="flex w-full lg:w-1/4">
+          <div style={`background-color: ${dato.color}`}>
+            <div class={`${dato.id2}`}>
+              <img
+                class={`${dato.id}`}
+                src={dato.image}
+                alt={`extraido de ${dato.title}`}
+              />
+            </div>
+            <div class="">
+              <div class="container-text p-5">
+                <h4>{dato.subTitle}</h4>
+                <h2 class="titleSecondary pb-2">{dato.title}</h2>
+                <p class="descriptionSecondary">{dato.description}</p>
+              </div>
+              <div class="py-3 px-5 flex items-end">
+                <span class="py-1 px-3">
+                  <a href="#">{dato.button}</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+    
+  </section>
+</section>
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
+  img {
+    object-fit: cover;
+    /* width: 100%; */
+  }
+  .container-text{
+    height: 180px;
+  }
+  h3 {
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #2c2a29;
+    letter-spacing: -0.6px;
+  }
+  h4 {
+    font-size: 14px;
+    font-weight: 18px;
+    font-weight: 400;
+    color: #000000;
+  }
+  h2 {
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #000000;
+  }
+  p {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #000000;
+  }
+  .titleSecondary {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.3px;
+  }
+  span{
+    border: 1px solid #292929;
+    border-radius: 25px;
+    
+  }
+  span:hover a{
+    color: #05386b;
+  }
+  a{
+    font-weight: 700;
+    color: #292929;
+  }
+  #ContentID{
+    display: flex;
+    flex-direction: row-reverse;
+    flex: 1;
+    justify-content: start;
+    align-items: center;
+  }
+  #ContentID div img{
+    width: 210px;
+    
+  }
+  #TextContent{
+    width: 50%;
+    /* height: auto; */
+
+    justify-content: space-between;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+  }
+  #divContent{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;  */
+    padding-top: 5rem;
+  }
+  /* #imageStyle{
+    width: auto !important;
+    height: auto !important;
+    padding: 29px 0px;
+  } */
 </style>
