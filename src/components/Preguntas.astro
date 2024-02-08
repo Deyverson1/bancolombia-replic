@@ -1,15 +1,31 @@
 ---
+import Question from "./icons/Question.astro";
+import Arrow from "./icons/Arrow.astro";
 
+const titleQuestion = [
+  {
+    title:
+      "¿Qué certificados puedo solicitar por la página web de Bancolombia?",
+  },
+  {
+    title: "¿Cómo pido un Extracto Bancario por la página web de Bancolombia?",
+  },
+  { title: "¿Cómo consulto mi certificado tributario" },
+  {
+    title: "¿Cuáles son los canales habilitados para descargar los extractos?",
+    borde: 'Valking',
+  },
+];
 ---
 
 <section class="flex flex-col px-40 py-10 w-full">
   <h2 class="pb-5">Respondemos a tus preguntas</h2>
   <div class="w-full">
     <main class="flex w-full">
-      <div class="content w-full  ">
+      <div class="content w-11/12">
         <div class="content-text pl-6 pt-8">
           <h4>Háblale ahora</h4>
-        <h3>Resuleve tus dudas preguntandole a Tabot</h3>
+          <h3>Resuleve tus dudas preguntandole a Tabot.</h3>
         </div>
         <div class="py-3 px-5 flex items-end">
           <span class="py-1 px-3">
@@ -17,49 +33,95 @@
           </span>
         </div>
       </div>
-     <div class="w-full">
-      <img src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/1351b0ea-a29c-43bd-a29a-56957522239e/YDRAY-tabot-whatsapp+1.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_K9HC1202P86O40QTNS9EAE1S47-1351b0ea-a29c-43bd-a29a-56957522239e-nzypemB" alt="Robot">
-     </div>
+      <div class="w-7/12">
+        <img
+          src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/1351b0ea-a29c-43bd-a29a-56957522239e/YDRAY-tabot-whatsapp+1.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_K9HC1202P86O40QTNS9EAE1S47-1351b0ea-a29c-43bd-a29a-56957522239e-nzypemB"
+          alt="Robot"
+        />
+      </div>
+      <div class="w-full pl-8">
+        <h6 class="pb-2">Lo más consultado</h6>
+        {
+          titleQuestion.map((dato) => (
+            <ul class="flex w-full items-center justify-center">
+              <a
+                href="#"
+                class="flex w-full items-center gap-x-4 px-5 content-questions"
+                id={dato.borde}
+              >
+                <Question class="size-8" />
+                <p class="w-full">{dato.title}</p>
+                <Arrow class="size-8" />
+              </a>
+            </ul>
+          ))
+        }
+      </div>
     </main>
   </div>
 </section>
 
 <style>
-  .content-text{
+  .content-text {
     min-height: 250px;
   }
-  h2{
+  h2 {
     font-size: 28px;
     font-weight: 700;
     line-height: 20px;
     color: 2c2a29;
   }
-  h3{
+  h3 {
     font-size: 28px;
     line-height: 30px;
     font-weight: 700;
     color: #222222;
-    letter-spacing: -.6px;
+    letter-spacing: -0.6px;
   }
-  h4{
+  h4 {
     font-size: 14px;
     line-height: 18px;
     font-weight: 400px;
     color: #222222;
   }
-  .content{
-    background-color: #FF7F41;
+  h6{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #222222;
   }
-
-  span{
+  .content {
+    background-color: #ff7f41;
+  }
+  span {
     border: 1px solid #292929;
     border-radius: 25px;
-    
   }
-  a{
+  a {
     font-size: 16px;
     line-height: 21px;
     color: #2c2a29;
     font-weight: 400;
+  }
+  p {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #2c2a29;
+    letter-spacing: -.2px;
+  }
+  .content-questions {
+    height: 68px;
+    border-top: 1px solid #2c2a29;
+  }
+  #Valking {
+    border-bottom: 1px solid #2c2a29;
+  }
+  img{
+    min-height: 300px;
+    max-height: 315px;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
   }
 </style>
