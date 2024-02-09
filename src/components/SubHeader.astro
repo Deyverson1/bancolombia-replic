@@ -1,0 +1,125 @@
+<header class="z-10 fixed top-9 w-full text-white transition-transform duration-500 transform translate-y-0 flex justify-between items-center px-4 bg-white">
+  <figure>
+    <a href="#"><img src="Bancolombia.png" alt="" /></a>
+  </figure>
+  <nav class="">
+    <ul class="border-box flex flex-row text-black gap-2">
+      <li>Inicio</li>
+      <li>Necesidades</li>
+      <li>Productos y Servicios</li>
+      <li>Educación Financiera</li>
+    </ul>
+  </nav>
+  <div class="flex text-black gap-x-4">
+    <div class="pt-2">
+      <a
+        class="rounded-2xl buttonTramites text-gray-200 hover:text-white px-2 py-1"
+      >
+        Trámites Digitales
+      </a>
+    </div>
+    <div class="select-container">
+      <div class="px-4 py-2">
+        <select name="options" id="" class="bg-white">
+          <option value="">Sucursal Virtual Personas</option>
+          <option value="">Sucursal virtual Pymes</option>
+          <option value="">Sucursar Virtual Empresas</option>
+          <option value="">Pagos PSE</option>
+          <option value="">Ver mas</option>
+        </select>
+        <button
+          class="buttonIN bg-yellow-300 rounded-full font-open-sans font-bold py-2 px-5"
+          >Entrar</button
+        >
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  let lastScrollTop = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", function () {
+    const currentScroll =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > header.clientHeight) {
+      header.style.transform = "translateY(-400%)"; // Scroll hacia abajo, oculta el header
+    } else {
+      header.style.transform = "translateY(0)"; // Scroll hacia arriba o al principio, muestra el header
+    }
+    lastScrollTop = currentScroll;
+  });
+</script>
+<style>
+ 
+  img {
+    width: 190px;
+  }
+  li {
+    font-size: 13px;
+    padding: 15px 6px;
+    border-bottom: transparent ;
+  }
+  li:hover{
+    border-bottom: 1px solid #fdc86d;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .buttonIN {
+    font-size: 12px;
+    color: 2c2a29;
+  }
+  .buttonTramites {
+    background-color: #292929;
+  }
+  .buttonTramites::before {
+    content: "¡Nuevo!";
+    font-family: "Open Sans";
+    font-size: 10px;
+    color: #2c2a29;
+    font-weight: 600;
+    text-align: center;
+    line-height: 17px;
+    width: 54px;
+    height: 20px;
+    top: 8px;
+    right: 25%;
+    position: absolute;
+    border-radius: 20px;
+    background: #97999b;
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: #97999b;
+    border-image: initial;
+    animation: fadein 2.5s cubic-bezier(0.39, 0.575, 0.565, 1) infinite both;
+  }
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(0.9);
+
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+
+    }
+  }
+  .select-container {
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
+  }
+  select {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  select:hover {
+    color: #05386b;
+  }
+</style>

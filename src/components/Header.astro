@@ -1,0 +1,105 @@
+---
+import SubHeader from "./SubHeader.astro";
+const contentNav = [
+  { title: "Personas" },
+  { title: "Negocios" },
+  { title: "Corporativos" },
+  { title: "Negocios especializados", id: "icon-nav-business" },
+  { title: "Tu360" },
+  { title: "Blog", id: "icon-nav-blog" },
+];
+---
+
+<header
+  class="z-10 fixed top-0 w-full text-white transition-transform duration-500 transform translate-y-0"
+>
+  <div class="content">
+    <nav class="text-white">
+      <div class="flex justify-between pl-7 pr-7 text-sm items-center">
+        <ul class="flex gap-2">
+          {
+            contentNav.map((dato) => (
+              <li>
+                <a href="#" class="py-2.5 px-2 inline-block" id={dato.id}>
+                  {dato.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <ul class="flex gap-2">
+          <li>
+            <a class="py-2.5 px-2 inline-block" href="#">Transparencia</a>
+          </li>
+          <li><a class="py-2.5 px-2 inline-block" href="#">Consumidor</a></li>
+        </ul>
+      </div>
+      <SubHeader />
+    </nav>
+  </div>
+</header>
+<script>
+  let lastScrollTop = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", function () {
+    const currentScroll =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > header.clientHeight) {
+      header.style.transform = "translateY(-100%)"; // Scroll hacia abajo, oculta el header
+    } else {
+      header.style.transform = "translateY(0)"; // Scroll hacia arriba o al principio, muestra el header
+    }
+    lastScrollTop = currentScroll;
+  });
+</script>
+
+<style>
+  nav {
+    background-color: #2c2a29;
+    height: 38px;
+  }
+  li {
+    font-weight: 530;
+    line-height: 18px;
+  }
+  #icon-nav-business::after {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+    font-weight: 900;
+    margin-left: 5px;
+  }
+  #icon-nav-blog::after {
+    content: " ";
+    margin-left: 5px;
+    position: absolute;
+    border-radius: 4px;
+    width: 8px;
+    height: 8px;
+    background: #00c389;
+    animation: badgeAnimation 250ms ease-in;
+    animation-fill-mode: forwards;
+  }
+  #icon-nav-blog::after,
+  ::before {
+    box-sizing: border-box;
+  }
+  a {
+    display: block;
+    position: relative;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+  }
+  a:hover {
+    background-color: #ffffff;
+    color: #2c2a29;
+    text-decoration: none;
+    font-style: normal;
+  }
+</style>
