@@ -1,0 +1,152 @@
+---
+import Facebook from "./icons/Facebook.astro";
+import WhatApp from "./icons/WhatApp.astro";
+import X from "./icons/X.astro";
+import Instagram from "./icons/Instagram.astro";
+import Youtube from "./icons/Youtube.astro";
+import Linkeding from "./icons/Linkeding.astro";
+
+const parrafo = [
+  "Acerca de nosotros",
+  "Trabaja con nosotros",
+  "Grupo Bancolombia",
+  "Centro de Ayuda",
+  "Canales",
+  "Puntos de atención",
+  "Accesibilidad",
+];
+const parrafo2 = [
+  "Gobierno Corporativo",
+  "SARLAFT",
+  "Protección de datos",
+  "Términos y Condiciones de uso",
+  "Proceso licitatorio seguros 2023-2025",
+  "Tarifas",
+  "Autorización para tratamiento de datos personales",
+];
+const parrafo3 = [
+  "Transparencia y Acceso a la Información",
+  "Atención al Consumidor Financiero",
+  "Defensor del Consumidor Financiero",
+  "notificacijudicial@bancolom bia.com.co",
+];
+const parrafo4 = [
+  "Contáctanos",
+  "Carrera 48 # 26 - 85 Medellín – Colombia",
+  "Bogotá +57 (601) 343 0000",
+  "Medellín +57 (604) 510 9000",
+  "Línea gratuita resto del país: 01 8000 9 12345",
+  "Línea ética 01 8000 524499",
+];
+const icons = ["WhatApp", "Facebook", "Twitter"];
+---
+
+<section class="px-40 py-20 w-full 2xl:px-96">
+  <article class="flex w-full gap-x-2">
+    <div class="paddingCard w-full">
+      <h3 class="pb-8">Te puede interesar</h3>
+      {parrafo.map((dato: string) => <li class="pb-4">{dato}</li>)}
+    </div>
+    <div class="paddingCard w-full flex-grow">
+      <h3 class="pb-8 w-full">Legales</h3>
+      {parrafo2.map((dato: string) => <li class="pb-4">{dato}</li>)}
+    </div>
+    <div class="paddingCard w-full pt-13">
+      {parrafo3.map((dato: string) => <li class="pb-4">{dato}</li>)}
+    </div>
+    <div class="paddingCard w-full">
+      <h3 class="pb-8">Contáctanos</h3>
+      {parrafo4.map((dato) => <li class="pb-4 px-2">{dato}</li>)}
+    </div>
+
+    <section class="latest-card w-full my-13">
+      <div>
+        <p class="pb-6">
+          Productos y servicios de Banca, Fiducia, Banca de Inversión,
+          Financiamiento, además del portafolio ofrecido por las entidades del
+          exterior en Panamá, Estados Unidos y Puerto Rico.
+        </p>
+      </div>
+      <div class="flex">
+        <img
+          src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/1136fde2-4716-4e0d-9525-cda53b638cea/Group+4.svg?MOD=AJPERES&CONVERT_TO=url&CACHEID=ROOTWORKSPACE.Z18_K9HC1202P86O40QTNS9EAE1S47-1136fde2-4716-4e0d-9525-cda53b638cea-nJvZkmc"
+          alt=""
+        />
+        <p class="spanEnd pl-4">BANCOLOMBIA S.A. Establecimiento Bancario</p>
+      </div>
+      <div class="flex pt-10 gap-x-5">
+        <a href=""><WhatApp class="size-4 fill-black" /></a>
+        <a href=""> <Facebook class="size-4 fill-black" /></a>
+        <a href=""> <X class="size-4 fill-black" /></a>
+        <a href=""> <Instagram class="size-4 fill-black" /></a>
+        <a href=""> <Youtube class="size-4 fill-black" /></a>
+        <a href=""> <Linkeding class="size-4 fill-black" /></a>
+      </div>
+    </section>
+  </article>
+</section>
+<footer class="px-40 py-4 w-full 2xl:px-96 flex justify-between items-center ">
+  <div>
+    <img src="Bancolombia.png" alt="">
+  </div>
+  <h4 class="text-black">Copyright © 2024 Grupo Bancolombia</h3>
+</footer>
+
+<style>
+  section {
+    background-color: #2c2a29;
+  }
+  h3 {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  li {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #ffffff;
+    letter-spacing: -0.17px;
+    list-style: none;
+  }
+  p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #ffffff;
+  }
+  .latest-card {
+    border-left: 1px solid white;
+    padding-top: 50px;
+    padding-left: 20px;
+    max-width: 34.33333%;
+  }
+  .paddingCard {
+    max-width: 15.6667%;
+  }
+  .pt-13 {
+    padding-top: 52px;
+  }
+  .my-13{
+    margin-top: 56px;
+    margin-bottom: 40px;
+  }
+  img {
+    max-width: 180px;
+  }
+  .spanEnd {
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: -0.17px;
+  }
+  a {
+    background-color: white;
+    padding: 4px;
+    border-radius: 100%;
+  }
+  i {
+    font-size: 27px;
+  }
+</style>
