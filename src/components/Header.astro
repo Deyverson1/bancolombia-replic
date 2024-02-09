@@ -42,17 +42,20 @@ const contentNav = [
   let lastScrollTop = 0;
   const header = document.querySelector("header");
 
+if (header) {
   window.addEventListener("scroll", function () {
     const currentScroll =
       window.pageYOffset || document.documentElement.scrollTop;
 
     if (currentScroll > lastScrollTop && currentScroll > header.clientHeight) {
-      header.style.transform = "translateY(-100%)"; // Scroll hacia abajo, oculta el header
+      header.style.transform = "translateY(-100%)"; 
     } else {
-      header.style.transform = "translateY(0)"; // Scroll hacia arriba o al principio, muestra el header
+      header.style.transform = "translateY(0)"; 
     }
     lastScrollTop = currentScroll;
   });
+}
+
 </script>
 
 <style>
