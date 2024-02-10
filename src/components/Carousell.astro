@@ -1,7 +1,8 @@
 ---
 import ArrowLeft from "./icons/ArrowLeft.astro";
 import Arrow from "./icons/Arrow.astro";
-import Plant from './icons/Plant.astro';
+import Plant from "./icons/Plant.astro";
+
 const data = [
     {
         title: "¿Una 4x4 a cambio de tus datos?",
@@ -69,7 +70,7 @@ const data = [
         <!-- Slider controls -->
         <button
             type="button"
-            class="absolute top-0 start-0  flex items-center justify-center h-full px-2 cursor-pointer group focus:outline-none"
+            class="absolute top-0 start-0 flex items-center justify-center h-full px-2 cursor-pointer group focus:outline-none"
             data-carousel-prev
         >
             <span
@@ -93,17 +94,29 @@ const data = [
         </button>
     </div>
 </div>
-<div class="absolute top-40 right-0 gap-x-4 items-right w-6/12 z-1 flex flex-row">
-    <a href="" class="inline-flex content-island gap-x-4 ">
-        <span> <img src="/icons/document-right.png" alt="" class="w-12 h-7" /></span>
-        <label for="" class="text-center">Conoce aquí como protegerte del fraude</label>
+<div
+    class="absolute top-40 right-0 gap-x-4 items-right w-6/12 z-1 flex flex-row"
+>
+    <a href="" class="inline-flex content-island gap-x-4">
+        <span>
+            <img
+                src="/icons/document-right.png"
+                alt=""
+                class="w-12 h-7"
+            /></span
+        >
+        <label for="" class="text-center"
+            >Conoce aquí como protegerte del fraude</label
+        >
         <span><Arrow class="size-8" /></span>
     </a>
     <a href="" class="inline-flex content-island"
         ><span>
-            <Plant class="size-8"/>
+            <Plant class="size-8" />
         </span>
-        <label class="text-center" for="">Con La Cuenta del Mar cuidamos los manglares. Entérate </label>
+        <label class="text-center" for=""
+            >Con La Cuenta del Mar cuidamos los manglares. Entérate
+        </label>
         <span><Arrow class="size-8" /></span></a
     >
 </div>
@@ -167,7 +180,7 @@ const data = [
         justify-content: space-between;
         align-items: center;
         font-size: 16px;
-    
+
         max-width: 277px;
         width: inherit;
         border-radius: 0;
@@ -175,7 +188,7 @@ const data = [
         box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
         position: relative;
     }
-    label{
+    label {
         font-size: 16px;
         line-height: 22px;
         font-weight: 400;
@@ -183,47 +196,7 @@ const data = [
         letter-spacing: -0.3px;
     }
 </style>
-
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const nextButton = document.querySelector("[data-carousel-next]");
-        const prevButton = document.querySelector("[data-carousel-prev]");
-        const nextButton2 = document.querySelector("[data-carousel-next]");
-        const prevButton2 = document.querySelector("[data-carousel-prev]");
-        const carouselItems = document.querySelectorAll("[data-carousel-item]");
-        let currentIndex = 0;
-        let intervalId: any;
-
-        function nextSlide() {
-            carouselItems[currentIndex].classList.add("hidden");
-            currentIndex = (currentIndex + 1) % carouselItems.length;
-            carouselItems[currentIndex].classList.remove("hidden");
-        }
-        nextButton?.addEventListener("click", function () {
-            nextSlide();
-        });
-        nextButton2?.addEventListener("click", function () {
-            stopCarousel();
-        });
-        prevButton2?.addEventListener("click", function () {
-            stopCarousel();
-        });
-        prevButton?.addEventListener("click", function () {
-            carouselItems[currentIndex].classList.add("hidden");
-            currentIndex =
-                (currentIndex - 1 + carouselItems.length) %
-                carouselItems.length;
-            carouselItems[currentIndex].classList.remove("hidden");
-        });
-
-        function startCarousel() {
-            intervalId = setInterval(nextSlide, 4000);
-        }
-
-        function stopCarousel() {
-            clearInterval(intervalId);
-        }
-
-        startCarousel();
-    });
+    import initSlider from "./Carousell.ts";
+    initSlider();
 </script>
