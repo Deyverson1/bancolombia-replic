@@ -1,0 +1,207 @@
+---
+const data = [
+    {
+        title: "¿Una 4x4 a cambio de tus datos?",
+        subtitle: "Seguridad Financiera",
+        description:
+            " No pasa en la vida real. Nunca entregues tus datos, códigos de seguridad ni números de tarjetas.",
+        button: "Protégete asi",
+        image: "https://cdn.dynamicyield.com/api/8775742/images/1a7551748da9d__banner_1.jpg",
+    },
+    {
+        title: "Tarjeta Débito Virtual",
+        subtitle: "Seguridad Financiera",
+        description:"Pide la nueva Tarjeta Débito Virtual desde nuestra App. Préndela o apágala desde tu celu.¡Aquí y ahora, tu plata contigo!",
+        button: "Conoce más",
+        image: "https://cdn.dynamicyield.com/api/8775742/images/3809375b29dd7__banner_2_tdvirtual.jpg",
+    },
+];
+---
+
+<div
+    id="animation-carousel"
+    class="relative w-full px-24 pt-44 bg-style-2 pb-10"
+    data-carousel="static"
+>
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <!-- Item 1 -->
+        {
+            data.map((dato) => (
+                <div class="duration-200 ease-linear px-16 " data-carousel-item>
+                    <div class="flex">
+                        <div class="flex h-full box-border gap-x-4 bg-div">
+                            <div class="p-5 container-text w-5/12">
+                                <h4>{dato.subtitle}</h4>
+                                <h2 class="pb-4">
+                                    {dato.title}
+                                </h2>
+                                <p class="mb-2">
+                                   {dato.description}
+                                </p>
+
+                                <div class="flex items-end py-3 px-5">
+                                    <span class="py-1 px-3 span-button">
+                                        <a href="">{dato.button}</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <img
+                                    class="w-full"
+                                    src={dato.image}
+                                    alt="image"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
+        <!-- Slider controls -->
+        <button
+            type="button"
+            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-prev
+        >
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+                <svg
+                    class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 6 10"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 1 1 5l4 4"></path>
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button
+            type="button"
+            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-next
+        >
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+                <svg
+                    class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 6 10"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m1 9 4-4-4-4"></path>
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+</div>
+
+<style>
+    h2 {
+        font-size: 56px;
+        line-height: 55px;
+        font-weight: 600;
+        color: #2c2a29;
+    }
+    h4 {
+        font-size: 16px;
+        line-height: 21px;
+        font-weight: 600;
+        color: #2c2a29;
+    }
+    p {
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 400;
+        color: #2c2a29;
+    }
+    a {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+        color: #2c2a29;
+    }
+    .bg-style-2 {
+        background-color: #f7f7f7;
+    }
+    .bg-div {
+        background-color: #f4f4f4;
+    }
+    .span-button {
+        display: inline-block;
+        background: #fdda24;
+        color: #2c2a29;
+        padding: 13px 19px;
+        line-height: 24px;
+        box-sizing: content-box;
+        border-radius: 100px;
+        text-align: center;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    }
+    .span-button:hover {
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const nextButton = document.querySelector("[data-carousel-next]");
+        const prevButton = document.querySelector("[data-carousel-prev]");
+        const nextButton2 = document.querySelector("[data-carousel-next]");
+        const prevButton2 = document.querySelector("[data-carousel-prev]");
+        const carouselItems = document.querySelectorAll("[data-carousel-item]");
+        let currentIndex = 0;
+        let intervalId: any;
+
+        // Función para avanzar al siguiente elemento del carrusel
+        function nextSlide() {
+            carouselItems[currentIndex].classList.add("hidden");
+            currentIndex = (currentIndex + 1) % carouselItems.length;
+            console.log(currentIndex);
+            carouselItems[currentIndex].classList.remove("hidden");
+        }
+        nextButton?.addEventListener("click", function () {
+            nextSlide();
+        });
+        nextButton2?.addEventListener("click", function () {
+            stopCarousel();
+        });
+        prevButton2?.addEventListener("click", function () {
+            stopCarousel();
+        });
+        prevButton?.addEventListener("click", function () {
+            carouselItems[currentIndex].classList.add("hidden");
+            currentIndex =
+                (currentIndex - 1 + carouselItems.length) %
+                carouselItems.length;
+            console.log(currentIndex);
+            carouselItems[currentIndex].classList.remove("hidden");
+        });
+
+        function startCarousel() {
+            intervalId = setInterval(nextSlide, 4000);
+        }
+
+        function stopCarousel() {
+            clearInterval(intervalId);
+        }
+
+        startCarousel();
+    });
+</script>
