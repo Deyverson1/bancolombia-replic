@@ -1,4 +1,25 @@
+# Bancolombia - Replic with Astro
+
+### Preview
+![BancolombiaPreview](public/Bancolombia.png)
+
+This project is based on the Bancolombia website https://www.bancolombia.com/personas, the main objective is to replicate its page as best as possible.
+
+#### Currently 30% developed
+
+>[!WARNING] 
+> The project is carried out for educational purposes.
+
+>[!NOTE] 
+> Developed with Astro and Tailwind
+
+
+
 # Astro Starter Kit: Basics
+
+>[!TIP]
+> If you clone the repository, install the necessary dependencies and run `npm run dev` in the terminal to start the project.
+
 
 ```sh
 npm create astro@latest -- --template basics
