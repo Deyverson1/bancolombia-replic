@@ -1,7 +1,7 @@
 # Bancolombia - Replic with Astro
 
 ### Preview
-![BancolombiaPreview](public/Bancolombia.png)
+![BancolombiaPreview](public/BancolombiaPreview.png)
 
 This project is based on the Bancolombia website https://www.bancolombia.com/personas, the main objective is to replicate its page as best as possible.
 
