@@ -14,24 +14,24 @@ const contentNav = [
   class="z-10 fixed top-0 w-full text-white transition-transform duration-500 transform translate-y-0"
 >
   <div class="content">
-    <nav class="text-white">
-      <div class="flex justify-between pl-7 pr-7 text-sm items-center">
-        <ul class="flex gap-2">
+    <nav class="text-white h-0 md:h-10 bg-[#2c2a29]">
+      <div class="hidden md:block justify-between md:pl-7 md:pr-7 text-sm items-center">
+        <ul class="flex md:gap-2">
           {
             contentNav.map((dato) => (
               <li>
-                <a href="#" class="py-2.5 px-2 inline-block" id={dato.id}>
+                <a href="#" class="md:py-2.5 md:px-2 inline-block" id={dato.id}>
                   {dato.title}
                 </a>
               </li>
             ))
           }
         </ul>
-        <ul class="flex gap-2">
+        <ul class="flex md:gap-2">
           <li>
-            <a class="py-2.5 px-2 inline-block" href="#">Transparencia</a>
+            <a class="md:py-2.5 md:px-2 inline-block" href="#">Transparencia</a>
           </li>
-          <li><a class="py-2.5 px-2 inline-block" href="#">Consumidor</a></li>
+          <li><a class="md:py-2.5 md:px-2 inline-block" href="#">Consumidor</a></li>
         </ul>
       </div>
       <SubHeader />
@@ -59,10 +59,7 @@ if (header) {
 </script>
 
 <style>
-  nav {
-    background-color: #2c2a29;
-    height: 38px;
-  }
+ 
   li {
     font-weight: 530;
     line-height: 18px;

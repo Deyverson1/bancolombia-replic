@@ -1,8 +1,8 @@
-<header class="z-10 fixed top-9 w-full text-white transition-transform duration-500 transform translate-y-0 flex justify-between items-center px-4 bg-white">
+<header class="z-10 fixed md:top-9 w-full hidden text-white transition-transform duration-500 transform translate-y-0 md:flex justify-between items-center px-4 bg-white">
   <figure>
-    <a href="#"><img src="Bancolombia.png" alt="" /></a>
+    <a href="#"><img src="Bancolombia.png" alt="" class="object-cover w-4/12 md:w-48"/></a>
   </figure>
-  <nav class="">
+  <nav class="hidden md:block">
     <ul class="border-box flex flex-row text-black gap-2">
       <li>Inicio</li>
       <li>Necesidades</li>
@@ -10,7 +10,7 @@
       <li>Educación Financiera</li>
     </ul>
   </nav>
-  <div class="flex text-black gap-x-4">
+  <div class="hidden md:flex text-black gap-x-4">
     <div class="pt-2">
       <a
         class="rounded-2xl buttonTramites text-gray-200 hover:text-white px-2 py-1"
@@ -55,10 +55,7 @@ if (header) {
 }
 </script>
 <style>
- 
-  img {
-    width: 190px;
-  }
+
   li {
     font-size: 13px;
     padding: 15px 6px;

@@ -18,12 +18,12 @@ const titleQuestion = [
 ];
 ---
 
-<section class="flex flex-col px-40 py-10 w-full 2xl:px-96">
+<section class="flex flex-col px-2 md:px-40 py-10 w-full 2xl:px-96">
 
   <h3 class="mb-2 pt-5 pb-5 ">Respondemos a tus preguntas</h3>
 
   <div class="w-full">
-    <main class="flex w-full">
+    <main class="flex w-full flex-col md:flex-row items-center ">
       <div class="content w-11/12">
         <div class="content-text pl-6 pt-8">
           <h4>Háblale ahora</h4>
@@ -41,7 +41,7 @@ const titleQuestion = [
           alt="Robot"
         />
       </div>
-      <div class="w-full pl-8">
+      <div class="w-full md:pl-8">
         <h6 class="pb-2">Lo más consultado</h6>
         {
           titleQuestion.map((dato) => (

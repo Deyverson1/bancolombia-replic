@@ -33,18 +33,16 @@ const data = [
 
 <div
     id="animation-carousel"
-    class="relative w-full px-24 pt-52 bg-style-2 pb-10"
+    class="relative w-full md:px-24 pt-28 md:pt-52 bg-style-2 pb-10"
     data-carousel="static"
 >
-    <!-- Carousel wrapper -->
     <div class="relative overflow-hidden rounded-lg div-content">
-        <!-- Item 1 -->
         {
             data.map((dato) => (
-                <div class="duration-200 ease-linear px-16 " data-carousel-item>
+                <div class="duration-200 ease-linear px-2 md:px-16 " data-carousel-item>
                     <div class="flex">
-                        <div class="flex h-full box-border gap-x-4 bg-div">
-                            <div class="p-5 container-text w-5/12">
+                        <div class="flex flex-col md:flex-row h-full box-border gap-x-4 bg-div">
+                            <div class="p-5 container-text w-full md:w-5/12">
                                 <h4>{dato.subtitle}</h4>
                                 <h2 class="pb-4">{dato.title}</h2>
                                 <p class="mb-2">{dato.description}</p>
@@ -57,7 +55,7 @@ const data = [
                             </div>
                             <div class="">
                                 <img
-                                    class="w-full h-full"
+                                    class="md:w-full md:h-full"
                                     src={dato.image}
                                     alt="image"
                                 />
@@ -67,10 +65,9 @@ const data = [
                 </div>
             ))
         }
-        <!-- Slider controls -->
         <button
             type="button"
-            class="absolute top-0 start-0 flex items-center justify-center h-full px-2 cursor-pointer group focus:outline-none"
+            class="absolute top-32 md:top-0 start-2  md:start-0 flex items-center justify-center h-full px-2 cursor-pointer group focus:outline-none"
             data-carousel-prev
         >
             <span
@@ -82,7 +79,7 @@ const data = [
         </button>
         <button
             type="button"
-            class="absolute top-0 end-0 flex items-center justify-center h-full px-2 cursor-pointer group focus:outline-none"
+            class="absolute  top-32 md:top-0 end-2 md:end-0 flex items-center justify-center h-full px-2 cursor-pointer group focus:outline-none"
             data-carousel-next
         >
             <span
@@ -95,29 +92,29 @@ const data = [
     </div>
 </div>
 <div
-    class="absolute top-40 right-0 gap-x-4 items-right w-6/12 z-1 flex flex-row"
+    class="md:absolute  md:top-40 right-0 gap-x-4 items-right w-full md:w-6/12 z-1 flex flex-row"
 >
-    <a href="" class="inline-flex content-island gap-x-4">
-        <span>
+    <a href="" class="h-36 flex md:inline-flex md:items-center md:flex-row content-island md:h-24 gap-x-4">
+        <span class="mt-4 md:mt-0">
             <img
                 src="/icons/document-right.png"
                 alt=""
                 class="w-12 h-7"
             /></span
         >
-        <label for="" class="text-center"
+        <label for="" class="md:text-center md:w-auto w-fit absolute md:static md:block top-16 md:top-0"
             >Conoce aquí como protegerte del fraude</label
         >
-        <span><Arrow class="size-8" /></span>
+        <span class="mt-4 md:mt-0"><Arrow class="size-8" /></span>
     </a>
-    <a href="" class="inline-flex content-island"
-        ><span>
+    <a href="" class="h-36  flex md:inline-flex md:items-center md:flex-row content-island md:h-24 gap-x-4"
+        ><span class="mt-4 md:mt-0">
             <Plant class="size-8" />
         </span>
-        <label class="text-center" for=""
+        <label class="md:text-center md:w-full w-fit-content absolute md:static md:block top-16 md:top-0" for=""
             >Con La Cuenta del Mar cuidamos los manglares. Entérate
         </label>
-        <span><Arrow class="size-8" /></span></a
+        <span class="mt-4 md:mt-0"><Arrow class="size-8" /></span></a
     >
 </div>
 
@@ -173,12 +170,8 @@ const data = [
     }
     .content-island {
         color: #2c2a29;
-        display: inline-flex;
-        flex-direction: row;
-        height: 90px;
         padding: 5px 15px;
         justify-content: space-between;
-        align-items: center;
         font-size: 16px;
 
         max-width: 277px;
@@ -194,6 +187,21 @@ const data = [
         font-weight: 400;
         color: #2c2a29;
         letter-spacing: -0.3px;
+    }
+    @media screen and (max-width: 426px) {
+        h2 {
+            font-size: 26px;
+            line-height: 26px;
+            font-weight: 700;
+            color: #2c2a29;
+            letter-spacing: 0px;
+        }
+        .div-content{
+            height: 520px;
+        }
+        .content-island {
+            max-width: 100%;
+        }
     }
 </style>
 <script>

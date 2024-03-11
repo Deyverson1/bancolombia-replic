@@ -2,9 +2,9 @@
 const { data, secondary, title } = Astro.props
 ---
 
-<section class="flex flex-col px-40 py-10 w-full 2xl:px-96">
+<section class="flex flex-col md:px-40 py-10 w-full 2xl:px-96">
   <h3 class="mb-2 pt-5 pb-5 ">{title}</h3>
-  <section class="flex w-full gap-4 ">
+  <section class="flex flex-col md:flex-row w-full gap-4 ">
     {
       data.map((dato: { color: any; image: string | null | undefined; title: unknown; subTitle: unknown; description: unknown; href: string | URL | null | undefined; button: unknown, id: string, id2: string, id3: string, }) => (
         <div class="flex lg:w-1/2 w-full">

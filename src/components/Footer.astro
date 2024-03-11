@@ -40,22 +40,22 @@ const parrafo4 = [
 ];
 ---
 
-<section class="px-40 py-20 w-full 2xl:px-96">
-  <article class="flex w-full gap-x-2">
+<section class="px-4 py-4 md:px-40 md:py-20 w-full 2xl:px-96">
+  <article class="flex w-full flex-col md:flex-row gap-x-2">
     <div class="paddingCard w-full">
       <h3 class="pb-8">Te puede interesar</h3>
-      {parrafo.map((dato: string) => <li class="pb-4">{dato}</li>)}
+      {parrafo.map((dato: string) => <li class="pb-4 hidden md:block">{dato}</li>)}
     </div>
     <div class="paddingCard w-full flex-grow">
       <h3 class="pb-8 w-full">Legales</h3>
-      {parrafo2.map((dato: string) => <li class="pb-4">{dato}</li>)}
+      {parrafo2.map((dato: string) => <li class="pb-4 hidden md:block">{dato}</li>)}
     </div>
     <div class="paddingCard w-full pt-13">
-      {parrafo3.map((dato: string) => <li class="pb-4">{dato}</li>)}
+      {parrafo3.map((dato: string) => <li class="pb-4 hidden md:block">{dato}</li>)}
     </div>
     <div class="paddingCard w-full">
       <h3 class="pb-8">Contáctanos</h3>
-      {parrafo4.map((dato) => <li class="pb-4 px-2">{dato}</li>)}
+      {parrafo4.map((dato) => <li class="pb-4 px-2 hidden md:block">{dato}</li>)}
     </div>
 
     <section class="latest-card w-full my-13">
@@ -84,7 +84,7 @@ const parrafo4 = [
     </section>
   </article>
 </section>
-<footer class="px-40 py-4 w-full 2xl:px-96 flex justify-between items-center ">
+<footer class="md:px-40 py-4 w-full 2xl:px-96 flex justify-between items-center ">
   <div>
     <img src="Bancolombia.png" alt="">
   </div>
