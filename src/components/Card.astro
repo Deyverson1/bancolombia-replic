@@ -4,7 +4,7 @@ const { data, secondary, title } = Astro.props
 
 <section class="flex flex-col md:px-40 py-10 w-full 2xl:px-96">
   <h3 class="mb-2 pt-5 pb-5 ">{title}</h3>
-  <section class="flex flex-col md:flex-row w-full gap-4 ">
+  <section class="flex flex-wrap md:flex-nowrap justify-center md:flex-row w-full gap-4 ">
     {
       data.map((dato: { color: any; image: string | null | undefined; title: unknown; subTitle: unknown; description: unknown; href: string | URL | null | undefined; button: unknown, id: string, id2: string, id3: string, }) => (
         <div class="flex lg:w-1/2 w-full">
@@ -34,8 +34,8 @@ const { data, secondary, title } = Astro.props
     }
     {
       secondary.map((dato: { color: any; image: string | null | undefined; title: unknown; subTitle: unknown; description: unknown; button: unknown, imageStyle: string, id: string , id2: string }) => (
-        <div class="flex w-full lg:w-1/4">
-          <div style={`background-color: ${dato.color}`}>
+        <div class="inline-flex items-center w-5/12 lg:w-1/4">
+          <div class="w-full md:w-auto" style={`background-color: ${dato.color}`}>
             <div class={`${dato.id2}`}>
               <img
                 class={`${dato.id}`}
@@ -44,7 +44,7 @@ const { data, secondary, title } = Astro.props
               />
             </div>
             <div class="">
-              <div class="container-text p-5">
+              <div class="container-text p-3 md:p-5">
                 <h4>{dato.subTitle}</h4>
                 <h2 class="titleSecondary pb-2">{dato.title}</h2>
                 <p class="descriptionSecondary">{dato.description}</p>
@@ -145,4 +145,19 @@ const { data, secondary, title } = Astro.props
     height: auto !important;
     padding: 29px 0px;
   } */
+
+  @media screen and (max-width: 427px) {
+    .container-text{
+      width: full;
+    }
+    #ContentID{
+      flex-direction: column;
+    }
+    #TextContent{
+      width: 100%;
+    }
+    .container-text{
+      height: auto;
+    }
+  }
 </style>
