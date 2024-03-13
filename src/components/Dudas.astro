@@ -3,82 +3,53 @@ import WhatsApp from "./icons/WhatApp.astro";
 import Facebook from "./icons/Facebook.astro";
 import Twitter from "./icons/Twitter.astro";
 import Arrow from "./icons/Arrow.astro";
-const data = [
-  {
-    title: "Puntos de atención",
-    button: "Visítanos",
-    image:
-      "https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/3db1f89c-3812-4955-bae5-5768bf4a5c4b/BB_multicolor_puntos_atencion+1.svg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_K9HC1202P86O40QTNS9EAE1S47-3db1f89c-3812-4955-bae5-5768bf4a5c4b-nwlNrq7",
-  },
-  {
-    title: "Chat en línea",
-    button: "Escríbenos",
-    image:
-      "https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/fecf86a2-46a3-4d85-be63-b1392ba9f107/BB_multicolor_descripcio%CC%81n+1.svg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_K9HC1202P86O40QTNS9EAE1S47-fecf86a2-46a3-4d85-be63-b1392ba9f107-nwlN6Vg",
-  },
-  {
-    title: "Llámanos a nuestra línea",
-    button: "018000 91 2345",
-    image:
-      "https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/d2cfd1fa-84a8-4050-bfdf-ee6f82d6d309/BB_multicolor_conoce_nuestra_app+1.svg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_K9HC1202P86O40QTNS9EAE1S47-d2cfd1fa-84a8-4050-bfdf-ee6f82d6d309-nwlMZEy",
-  },
-  {
-    title: "Prefieres que te llamemos",
-    button: "Cuando quieras",
-    image:
-      "https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/59536b04-36a8-4850-9824-4759bb38d7f1/BB_multicolor_lineas_atencion+1.svg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_K9HC1202P86O40QTNS9EAE1S47-59536b04-36a8-4850-9824-4759bb38d7f1-nwlNij8",
-  },
-  {
-    title: "Contáctanos por redes sociales",
-    image:
-      "https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/62a0bfec-5c38-4827-9b81-cefb288a1f59/BB_multicolor_sonido_activo+1.svg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_K9HC1202P86O40QTNS9EAE1S47-62a0bfec-5c38-4827-9b81-cefb288a1f59-nwlNHrB",
-  },
-];
+import { dataDoubts } from "../data/doubts";
 ---
 
 <section class="px-2 md:px-40 2xl:px-96 text-center my-10 flex flex-col">
   <h3 class="pb-2">¿Aún tienes dudas?</h3>
-  <section class="flex flex-wrap md:flex-nowrap items-center justify-center md:justify-between flex-1 pb-12">
+  <section
+    class="flex flex-wrap md:flex-nowrap items-center justify-center md:justify-between flex-1 pb-12"
+  >
     {
-      data.map((dato) => (
+      dataDoubts.map((dato) => (
         <main class="flex flex-col items-center text-center w-5/12 md:w-full">
           <div>
             <img src={dato.image} alt="" />
           </div>
           <div class="pb-3">
-          <p class="mx-8  text-center">{dato.title}</p>
-            </div>
-            <a href="" class="underline">{dato.button}</a>
+            <p class="mx-8  text-center">{dato.title}</p>
+          </div>
+          <a href="" class="underline">
+            {dato.button}
+          </a>
         </main>
       ))
     }
   </section>
   <footer class="flex items-center justify-center underline">
-    <a href="#" class="text-base font-semibold">
-      Ver todos los productos </a
-    >
-    <Arrow class="size-5"/>
+    <a href="#" class="text-base font-semibold"> Ver todos los productos </a>
+    <Arrow class="size-5" />
   </footer>
 </section>
 <style>
-
-  main{
+  main {
     padding: 40px 15px 0;
   }
-  h3{
+  h3 {
     font-size: 28px;
     font-weight: 400;
     line-height: 30px;
     color: #2c2a29;
   }
-  p{
+  p {
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
     color: #222222;
     height: 36px;
   }
-  a{
+  a {
     font-size: 16px;
     line-height: 24px;
     font-weight: 600;
