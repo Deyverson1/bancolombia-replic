@@ -5,7 +5,8 @@ import X from "./icons/X.astro";
 import Instagram from "./icons/Instagram.astro";
 import Youtube from "./icons/Youtube.astro";
 import Linkeding from "./icons/Linkeding.astro";
-
+import Switch from "./SwitchFooter";
+const { val } = Astro.props;
 const parrafo = [
   "Acerca de nosotros",
   "Trabaja con nosotros",
@@ -42,23 +43,10 @@ const parrafo4 = [
 
 <section class="px-4 py-4 md:px-40 md:py-20 w-full 2xl:px-96">
   <article class="flex w-full flex-col md:flex-row gap-x-2">
-    <div class="paddingCard w-full">
-      <h3 class="pb-8">Te puede interesar</h3>
-      {parrafo.map((dato: string) => <li class="pb-4 hidden md:block">{dato}</li>)}
-    </div>
-    <div class="paddingCard w-full flex-grow">
-      <h3 class="pb-8 w-full">Legales</h3>
-      {parrafo2.map((dato: string) => <li class="pb-4 hidden md:block">{dato}</li>)}
-    </div>
-    <div class="paddingCard w-full pt-13">
-      {parrafo3.map((dato: string) => <li class="pb-4 hidden md:block">{dato}</li>)}
-    </div>
-    <div class="paddingCard w-full">
-      <h3 class="pb-8">Contáctanos</h3>
-      {parrafo4.map((dato) => <li class="pb-4 px-2 hidden md:block">{dato}</li>)}
-    </div>
+    
+    <Switch client:load/>
 
-    <section class="latest-card w-full my-13">
+    <section class="latest-card w-full my-2 md:my-13">
       <div>
         <p class="pb-6">
           Productos y servicios de Banca, Fiducia, Banca de Inversión,
@@ -84,11 +72,13 @@ const parrafo4 = [
     </section>
   </article>
 </section>
-<footer class="md:px-40 py-4 w-full 2xl:px-96 flex justify-between items-center ">
+<footer
+  class="md:px-40 py-4 w-full 2xl:px-96 flex justify-between items-center"
+>
   <div>
-    <img src="Bancolombia.png" alt="">
+    <img src="Bancolombia.png" alt="" />
   </div>
-  <h4 class="text-black">Copyright © 2024 Grupo Bancolombia</h3>
+  <h4 class="text-black text-center">Copyright © 2024 Grupo Bancolombia</h4>
 </footer>
 
 <style>
@@ -127,7 +117,7 @@ const parrafo4 = [
   .pt-13 {
     padding-top: 52px;
   }
-  .my-13{
+  .my-13 {
     margin-top: 56px;
     margin-bottom: 40px;
   }
@@ -147,5 +137,17 @@ const parrafo4 = [
   }
   i {
     font-size: 27px;
+  }
+
+  @media screen and (max-width: 427px) {
+    .latest-card {
+      max-width: 100%;
+      border-left: none;
+      padding-left: 2px;
+      padding-top: 2px;
+    }
+    .paddingCard {
+      max-width: 100%;
+    }
   }
 </style>
