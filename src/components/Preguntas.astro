@@ -1,29 +1,12 @@
 ---
 import Question from "./icons/Question.astro";
 import ArrowNarrow from "./icons/ArrowNarrow.astro";
-
-const titleQuestion = [
-  {
-    title:
-      "¿Qué certificados puedo solicitar por la página web de Bancolombia?",
-  },
-  {
-    title: "¿Cómo pido un Extracto Bancario por la página web de Bancolombia?",
-  },
-  { title: "¿Cómo consulto mi certificado tributario" },
-  {
-    title: "¿Cuáles son los canales habilitados para descargar los extractos?",
-    borde: 'Valking',
-  },
-];
+import { titleQuestion } from "../data/questions";
 ---
-
 <section class="flex flex-col px-2 md:px-40 py-10 w-full 2xl:px-96">
-
-  <h3 class="mb-2 pt-5 pb-5 ">Respondemos a tus preguntas</h3>
-
+  <h3 class="mb-2 pt-5 pb-5">Respondemos a tus preguntas</h3>
   <div class="w-full">
-    <main class="flex w-full flex-col md:flex-row items-center ">
+    <main class="flex w-full flex-col md:flex-row items-center">
       <div class="content w-12/12 md:w-11/12">
         <div class="content-text pl-6 pt-8">
           <h4>Háblale ahora</h4>
@@ -61,7 +44,9 @@ const titleQuestion = [
       </div>
     </main>
   </div>
-  <a href="#" class="underline pt-8 text-base font-semibold">Ver todas las preguntas frecuentes</a>
+  <a href="#" class="underline pt-8 text-base font-semibold"
+    >Ver todas las preguntas frecuentes</a
+  >
 </section>
 
 <style>
@@ -87,7 +72,7 @@ const titleQuestion = [
     font-weight: 400px;
     color: #222222;
   }
-  h6{
+  h6 {
     font-size: 18px;
     font-weight: 700;
     line-height: 20px;
@@ -102,14 +87,13 @@ const titleQuestion = [
   }
   a {
     color: #2c2a29;
-
   }
   p {
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
     color: #2c2a29;
-    letter-spacing: -.2px;
+    letter-spacing: -0.2px;
   }
   .content-questions {
     height: 68px;
@@ -121,7 +105,7 @@ const titleQuestion = [
   #Valking {
     border-bottom: 1px solid #2c2a29;
   }
-  img{
+  img {
     min-height: 300px;
     max-height: 315px;
     height: auto;

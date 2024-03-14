@@ -5,46 +5,13 @@ import X from "./icons/X.astro";
 import Instagram from "./icons/Instagram.astro";
 import Youtube from "./icons/Youtube.astro";
 import Linkeding from "./icons/Linkeding.astro";
-import Switch from "./SwitchFooter";
-const { val } = Astro.props;
-const parrafo = [
-  "Acerca de nosotros",
-  "Trabaja con nosotros",
-  "Grupo Bancolombia",
-  "Centro de Ayuda",
-  "Canales",
-  "Puntos de atención",
-  "Accesibilidad",
-];
-const parrafo2 = [
-  "Gobierno Corporativo",
-  "SARLAFT",
-  "Protección de datos",
-  "Términos y Condiciones de uso",
-  "Proceso licitatorio seguros 2023-2025",
-  "Tarifas",
-  "Autorización para tratamiento de datos personales",
-];
-const parrafo3 = [
-  "Transparencia y Acceso a la Información",
-  "Atención al Consumidor Financiero",
-  "Defensor del Consumidor Financiero",
-  "notificacijudicial@bancolom bia.com.co",
-];
-const parrafo4 = [
-  "Contáctanos",
-  "Carrera 48 # 26 - 85 Medellín – Colombia",
-  "Bogotá +57 (601) 343 0000",
-  "Medellín +57 (604) 510 9000",
-  "Línea gratuita resto del país: 01 8000 9 12345",
-  "Línea ética 01 8000 524499",
-];
+import FooterMain from "./FooterMain";
 ---
 
 <section class="px-4 py-4 md:px-40 md:py-20 w-full 2xl:px-96">
   <article class="flex w-full flex-col md:flex-row gap-x-2">
     
-    <Switch client:load/>
+    <FooterMain client:load/>
 
     <section class="latest-card w-full my-2 md:my-13">
       <div>
@@ -151,3 +118,4 @@ const parrafo4 = [
     }
   }
 </style>
+./FooterMain

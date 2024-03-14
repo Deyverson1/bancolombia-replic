@@ -1,19 +1,15 @@
 ---
-const dataTitle = [
-  { title: "Trámites digitales", image: "/icons/document-right.png", color: 'id1' },
-  { title: "Negocios deuda", image: "/icons/hand-money.png" },
-  { title: "Pagos", image: "/icons/cash.png" },
-  { title: "Centro de Ayuda", image: "/icons/help.png" },
-  { title: "Certificados bancarios", image: "/icons/document-left.png" },
-  { title: "Solicita tu turno", image: "/icons/happy-face.png" },
-];
+import { dataMenu } from "../data/menu";
 ---
 
 <section class="md:px-36 pt-5 w-full 2xl:px-96">
   <div class="flex ink">
     {
-      dataTitle.map((dato) => (
-        <article class="flex flex-col items-center w-full flex-1 text-center " id={dato.color}>
+      dataMenu.map((dato) => (
+        <article
+          class="flex flex-col items-center w-full flex-1 text-center "
+          id={dato.color}
+        >
           <main class="w-full py-5">
             <div>
               <a href="flex flex-col w-full flex-1 ">
@@ -49,7 +45,7 @@ const dataTitle = [
     font-weight: 400;
     color: #2c2a29;
   }
-  #id1{
-    background-color: #F9D3E1;
+  #id1 {
+    background-color: #f9d3e1;
   }
 </style>
