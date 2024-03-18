@@ -9,13 +9,13 @@ import { dataHeader } from "../data/header";
   <div class="content">
     <nav class="text-white h-0 md:h-10 bg-[#2c2a29]">
       <div
-        class="hidden md:block justify-between md:pl-7 md:pr-7 text-sm items-center"
+        class="hidden md:flex justify-between md:pl-7 md:pr-7 text-sm items-center"
       >
         <ul class="flex md:gap-2">
           {
             dataHeader.map((dato) => (
               <li>
-                <a href="#" class="md:py-2.5 md:px-2 inline-block" id={dato.id}>
+                <a href="#" class="md:py-2.5 md:px-2 hover:bg-white hover:scale-105 hover:text-black inline-block" id={dato.id}>
                   {dato.title}
                 </a>
               </li>
@@ -24,10 +24,10 @@ import { dataHeader } from "../data/header";
         </ul>
         <ul class="flex md:gap-2">
           <li>
-            <a class="md:py-2.5 md:px-2 inline-block" href="#">Transparencia</a>
+            <a class="md:py-2.5 md:px-2 inline-block hover:bg-white hover:scale-105 hover:text-black" href="#">Transparencia</a>
           </li>
           <li>
-            <a class="md:py-2.5 md:px-2 inline-block" href="#">Consumidor</a>
+            <a class="md:py-2.5 md:px-2 inline-block hover:bg-white hover:scale-105 hover:text-black" href="#">Consumidor</a>
           </li>
         </ul>
       </div>
@@ -94,10 +94,5 @@ import { dataHeader } from "../data/header";
     line-height: 18px;
     font-weight: 500;
   }
-  a:hover {
-    background-color: #ffffff;
-    color: #2c2a29;
-    text-decoration: none;
-    font-style: normal;
-  }
+ 
 </style>

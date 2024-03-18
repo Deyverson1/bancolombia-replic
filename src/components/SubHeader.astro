@@ -1,16 +1,16 @@
-<header class="z-10 fixed md:top-9 w-full text-white transition-transform duration-500 transform translate-y-0 md:flex justify-between items-center px-4 bg-white">
+<header class="z-10 fixed md:top-9 w-full text-white transition-transform duration-500 transform translate-y-0 md:flex justify-around  px-4 bg-white">
   <figure>
     <a href="#"><img src="Bancolombia.png" alt="" class="object-cover w-5/12 md:w-48"/></a>
   </figure>
-  <nav class="hidden md:block">
-    <ul class="border-box flex flex-row text-black gap-2">
+  <nav class="hidden md:flex">
+    <ul class="flex items-center text-black gap-2">
       <li>Inicio</li>
       <li>Necesidades</li>
       <li>Productos y Servicios</li>
       <li>Educación Financiera</li>
     </ul>
   </nav>
-  <div class="hidden md:flex text-black gap-x-4">
+  <div class="hidden md:flex md:items-center text-black gap-x-4">
     <div class="pt-2">
       <a
         class="rounded-2xl buttonTramites text-gray-200 hover:text-white px-2 py-1"
@@ -62,13 +62,13 @@ if (header) {
     border-bottom: transparent ;
   }
   li:hover{
-    border-bottom: 1px solid #fdc86d;
-    font-weight: 600;
+    border-bottom: 2.5px solid #fdc86d;
+    transform: scale(1.05);
     cursor: pointer;
   }
   .buttonIN {
     font-size: 12px;
-    color: 2c2a29;
+    color: #2c2a29;
   }
   .buttonTramites {
     background-color: #292929;
@@ -83,8 +83,8 @@ if (header) {
     line-height: 17px;
     width: 54px;
     height: 20px;
-    top: 8px;
-    right: 25%;
+    top: 10%;
+    right: 29%;
     position: absolute;
     border-radius: 20px;
     background: #97999b;
