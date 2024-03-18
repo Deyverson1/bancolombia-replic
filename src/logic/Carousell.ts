@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 export default function initSlider() {
   if (typeof document != undefined) {
     document.addEventListener("DOMContentLoaded", function () {
@@ -26,21 +28,29 @@ export default function initSlider() {
       prevButton?.addEventListener("click", function () {
         carouselItems[currentIndex].classList.add("hidden");
         currentIndex =
-          (currentIndex - 1 + carouselItems.length) %
-          carouselItems.length;
+        (currentIndex - 1 + carouselItems.length) %
+        carouselItems.length;
         carouselItems[currentIndex].classList.remove("hidden");
       });
-
+      
       function startCarousel() {
         intervalId = setInterval(nextSlide, 4000);
       }
-
+      
       function stopCarousel() {
         clearInterval(intervalId);
       }
-
+      
+      nextSlide()
+      nextSlide()
+      nextSlide()
       startCarousel();
-
+  
+      return () => {
+        stopCarousel();
+      };
     })
+         
+    
   };
 }

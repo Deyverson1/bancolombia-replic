@@ -1,8 +1,10 @@
 ---
 import ArrowLeft from "./icons/ArrowLeft.astro";
 import Arrow from "./icons/Arrow.astro";
-import Plant from "./icons/Plant.astro";
+import Document from "./icons/Document.astro";
+import Coins from './icons/Coins.astro'
 import { dataCarousel } from "../data/carousel";
+
 ---
 
 <div
@@ -10,7 +12,7 @@ import { dataCarousel } from "../data/carousel";
   class="w-full md:px-24 pt-28 md:pt-52 bg-style-2 pb-10"
   data-carousel="static"
 >
-  <div class="relative overflow-hidden rounded-lg div-content">
+  <div class="relative overflow-hidden rounded-lg div-content h-96">
     {
       dataCarousel.map((dato) => (
         <div class="duration-200 ease-linear px-2 md:px-16 " data-carousel-item>
@@ -21,7 +23,7 @@ import { dataCarousel } from "../data/carousel";
                 <h2 class="pb-4">{dato.title}</h2>
                 <p class="mb-2">{dato.description}</p>
 
-                <div class="flex items-end py-3 px-5">
+                <div class="flex items-end py-8 px-2">
                   <span class="py-1 px-3 span-button">
                     <a href="">{dato.button}</a>
                   </span>
@@ -37,7 +39,7 @@ import { dataCarousel } from "../data/carousel";
     }
     <button
       type="button"
-      class="absolute top-32 md:top-0 start-2 md:start-0 flex items-center justify-center h-full px-2 cursor-pointer group focus:outline-none"
+      class="absolute top-32 md:top-0 start-2 md:-start-0 flex items-center justify-center h-full px-2 cursor-pointer group focus:outline-none"
       data-carousel-prev
     >
       <span
@@ -69,7 +71,8 @@ import { dataCarousel } from "../data/carousel";
     class="h-36 flex md:inline-flex md:items-center md:flex-row content-island md:h-24 gap-x-4"
   >
     <span class="mt-4 md:mt-0">
-      <img src="/icons/document-right.png" alt="" class="w-12 h-7" /></span
+      <Document class="size-8"/>
+      </span
     >
     <label
       for=""
@@ -82,12 +85,12 @@ import { dataCarousel } from "../data/carousel";
     href=""
     class="h-36 flex md:inline-flex md:items-center md:flex-row content-island md:h-24 gap-x-4"
     ><span class="mt-4 md:mt-0">
-      <Plant class="size-8" />
+      <Coins class="size-8" />
     </span>
     <label
       class="md:text-center md:w-full w-fit-content absolute md:static md:block top-16 md:top-0"
       for=""
-      >Con La Cuenta del Mar cuidamos los manglares. Entérate
+      >¿Hora de pagar tus impuestos? Descubre como
     </label>
     <span class="mt-4 md:mt-0"><Arrow class="size-8" /></span></a
   >
@@ -95,9 +98,9 @@ import { dataCarousel } from "../data/carousel";
 
 <style>
   h2 {
-    font-size: 56px;
+    font-size: 52px;
     line-height: 55px;
-    font-weight: 600;
+    font-weight: 650;
     color: #2c2a29;
     letter-spacing: -4px;
   }
@@ -140,9 +143,6 @@ import { dataCarousel } from "../data/carousel";
   .span-button:hover {
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
   }
-  .div-content {
-    height: 396px;
-  }
   .content-island {
     color: #2c2a29;
     padding: 5px 15px;
@@ -161,7 +161,7 @@ import { dataCarousel } from "../data/carousel";
     line-height: 22px;
     font-weight: 400;
     color: #2c2a29;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.5px;
   }
   @media screen and (max-width: 426px) {
     h2 {

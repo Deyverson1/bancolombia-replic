@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Up } from "./icons/Up";
 import { Down } from "./icons/Down";
 import { paragraph, paragraph2, paragraph3, paragraph4 } from '../data/footer'
-export default function FooterMain() {
+export default function FooterContent() {
   const [isOpen1, setOpen1] = useState(true)
   const [isOpen2, setOpen2] = useState(true)
   const [isOpen3, setOpen3] = useState(true)
@@ -56,8 +56,8 @@ export default function FooterMain() {
           </div>
         </div>
         {paragraph4.map((dato, index: number) => (
-            <li key={index} className={`${isOpen3 ? 'block' : 'hidden'} pb-4 text-sm  md:block`}>{dato}</li>
-          ))
+          <li key={index} className={`${isOpen3 ? 'block' : 'hidden'} pb-4 text-sm  md:block`}>{dato}</li>
+        ))
         }
       </div>
 
