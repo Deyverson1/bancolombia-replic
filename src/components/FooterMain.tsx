@@ -9,7 +9,7 @@ export default function FooterMain() {
 
   return (
     <>
-      <main className="paddingCard border-t-2 text-white pt-2 md:border-t-0 md:pt-0 w-full">
+      <main className="paddingCard border-t-2 text-sm text-white pt-2 md:border-t-0 md:pt-0 w-full">
         <div className="flex justify-between ">
           <h3 className="pb-8">Te puede interesar</h3>
           <div onClick={() => { setOpen1(!isOpen1) }} className="md:hidden">
@@ -24,7 +24,7 @@ export default function FooterMain() {
         ))
         }
       </main>
-      <div className="paddingCard  text-white w-full border-t-2 pt-2 md:border-t-0 md:pt-0 flex-grow">
+      <div className="paddingCard text-sm text-white w-full border-t-2 pt-2 md:border-t-0 md:pt-0 flex-grow">
         <div className="flex md:block justify-between">
           <h3 className="pb-8 w-full">Legales</h3>
           <div onClick={() => { setOpen2(!isOpen2) }} className="md:hidden">
@@ -39,15 +39,15 @@ export default function FooterMain() {
         ))
         }
       </div>
-      <div className="paddingCard text-white w-full md:pt-12">
+      <div className="paddingCard text-sm text-white w-full md:pt-12">
         {paragraph3.map((dato: string, index: number) => (
           <li key={index} className={`${isOpen2 ? 'block' : 'hidden'} pb-4 md:block`}>{dato}</li>
         ))
         }
       </div>
-      <div className="paddingCard text-white border-t-2 pt-2 md:border-t-0 md:pt-0 w-full">
+      <div className="paddingCard text-sm text-white border-t-2 pt-2 md:border-t-0 md:pt-0 w-full">
         <div className="flex md:block justify-between">
-          <h3 className="pb-4 md:pb-8">Contáctanos</h3>
+          <h3 className="pb-8 md:pb-8">Contáctanos</h3>
           <div onClick={() => { setOpen3(!isOpen3) }} className="md:hidden">
             {isOpen3
               ? <Down />
@@ -56,7 +56,7 @@ export default function FooterMain() {
           </div>
         </div>
         {paragraph4.map((dato, index: number) => (
-            <li key={index} className={`${isOpen3 ? 'block' : 'hidden'} pb-4  md:block`}>{dato}</li>
+            <li key={index} className={`${isOpen3 ? 'block' : 'hidden'} pb-4 text-sm  md:block`}>{dato}</li>
           ))
         }
       </div>
