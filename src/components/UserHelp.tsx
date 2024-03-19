@@ -5,9 +5,8 @@ import { XIcon } from "./icons/X.tsx"
 import { UserHelpData } from "../data/UserHelp.ts"
 
 export default function UserHelp() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(true)
   function handleUser() {
-    console.log('Click')
     setMenuOpen(!menuOpen)
   }
   return (
