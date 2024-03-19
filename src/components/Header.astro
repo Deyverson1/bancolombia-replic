@@ -15,7 +15,11 @@ import { dataHeader } from "../data/header";
           {
             dataHeader.map((dato) => (
               <li>
-                <a href="#" class="md:py-2.5 md:px-2 hover:bg-white hover:scale-105 hover:text-black inline-block" id={dato.id}>
+                <a
+                  href="#"
+                  class="md:py-2.5 md:px-2 hover:bg-white hover:scale-105 hover:text-black inline-block"
+                  id={dato.id}
+                >
                   {dato.title}
                 </a>
               </li>
@@ -24,10 +28,16 @@ import { dataHeader } from "../data/header";
         </ul>
         <ul class="flex md:gap-2">
           <li>
-            <a class="md:py-2.5 md:px-2 inline-block hover:bg-white hover:scale-105 hover:text-black" href="#">Transparencia</a>
+            <a
+              class="md:py-2.5 md:px-2 inline-block hover:bg-white hover:scale-105 hover:text-black"
+              href="#">Transparencia</a
+            >
           </li>
           <li>
-            <a class="md:py-2.5 md:px-2 inline-block hover:bg-white hover:scale-105 hover:text-black" href="#">Consumidor</a>
+            <a
+              class="md:py-2.5 md:px-2 inline-block hover:bg-white hover:scale-105 hover:text-black"
+              href="#">Consumidor</a
+            >
           </li>
         </ul>
       </div>
@@ -41,6 +51,7 @@ import { dataHeader } from "../data/header";
 
   if (header) {
     window.addEventListener("scroll", function () {
+      console.log("Scroll");
       const currentScroll =
         window.pageYOffset || document.documentElement.scrollTop;
 
@@ -94,5 +105,4 @@ import { dataHeader } from "../data/header";
     line-height: 18px;
     font-weight: 500;
   }
- 
 </style>

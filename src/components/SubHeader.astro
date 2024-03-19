@@ -1,7 +1,19 @@
-<header class="z-10 fixed md:top-9 w-full text-white transition-transform duration-500 transform translate-y-0 md:flex justify-around  px-4 bg-white">
-  <figure>
-    <a href="#"><img src="Bancolombia.png" alt="" class="object-cover w-5/12 md:w-48"/></a>
+---
+import HeaderMenu from "./HeaderMenu";
+---
+<header
+  class="z-10 flex md:top-9 w-full text-white transition-transform duration-500 transform translate-y-0 md:flex justify-around px-4 bg-white"
+>
+  <figure class="">
+    <a href="#"
+      ><img
+        src="Bancolombia.png"
+        alt=""
+        class="object-cover w-6/12 md:w-48"
+      /></a
+    >
   </figure>
+  <HeaderMenu client:load/>
   <nav class="hidden md:flex">
     <ul class="flex items-center text-black gap-2">
       <li>Inicio</li>
@@ -40,28 +52,31 @@
   let lastScrollTop = 0;
   const header = document.querySelector("header");
 
-if (header) {
-  window.addEventListener("scroll", function () {
-    const currentScroll =
-      window.pageYOffset || document.documentElement.scrollTop;
+  if (header) {
+    window.addEventListener("scroll", function () {
+      console.log("Scroll");
+      const currentScroll =
+        window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentScroll > lastScrollTop && currentScroll > header.clientHeight) {
-      header.style.transform = "translateY(-400%)"; 
-    } else {
-      header.style.transform = "translateY(0)"; 
-    }
-    lastScrollTop = currentScroll;
-  });
-}
+      if (
+        currentScroll > lastScrollTop &&
+        currentScroll > header.clientHeight
+      ) {
+        header.style.transform = "translateY(-400%)";
+      } else {
+        header.style.transform = "translateY(0)";
+      }
+      lastScrollTop = currentScroll;
+    });
+  }
 </script>
 <style>
-
   li {
     font-size: 13px;
     padding: 15px 6px;
-    border-bottom: transparent ;
+    border-bottom: transparent;
   }
-  li:hover{
+  li:hover {
     border-bottom: 2.5px solid #fdc86d;
     transform: scale(1.05);
     cursor: pointer;
@@ -102,12 +117,10 @@ if (header) {
     50% {
       opacity: 1;
       transform: scale(0.9);
-
     }
     100% {
       opacity: 0;
       transform: scale(1);
-
     }
   }
   .select-container {
