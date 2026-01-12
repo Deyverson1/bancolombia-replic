@@ -9,10 +9,10 @@ import { dataCarousel } from "../data/carousel";
 
 <div
   id="animation-carousel"
-  class="w-full md:px-24 pt-28 md:pt-52 bg-style-2 pb-10"
+  class="w-full md:px-24 justify-center flex-wrap flex pt-28 md:pt-52 bg-style-2 pb-10"
   data-carousel="static"
 >
-  <div class="relative overflow-hidden rounded-lg div-content h-96">
+  <div class="relative xl:w-10/12 2xl:w-9/12 2xl:px-2 items-center overflow-hidden rounded-lg div-content ">
     {
       dataCarousel.map((dato) => (
         <div class="duration-200 ease-linear px-2 md:px-16 " data-carousel-item>
@@ -23,14 +23,14 @@ import { dataCarousel } from "../data/carousel";
                 <h2 class="pb-4">{dato.title}</h2>
                 <p class="mb-2">{dato.description}</p>
 
-                <div class="flex items-end py-8 px-2">
+                <div class="flex items-end pt-4 px-2">
                   <span class="py-1 px-3 span-button">
                     <a href="">{dato.button}</a>
                   </span>
                 </div>
               </div>
               <div class="">
-                <img class="md:w-full md:h-full" src={dato.image} alt="image" />
+                <img class="aspect-[7/5]" src={dato.image} alt="image" />
               </div>
             </div>
           </div>
@@ -39,11 +39,11 @@ import { dataCarousel } from "../data/carousel";
     }
     <button
       type="button"
-      class="absolute top-40 md:top-0 start-2 md:-start-0 flex items-center justify-center h-full px-2 cursor-pointer group focus:outline-none"
+      class="absolute top-40 md:top-0 start-2 md:-start-0 flex items-center justify-center h-full px- cursor-pointer group focus:outline-none"
       data-carousel-prev
     >
       <span
-        class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 dark:bg-yellow-300 ring-transparent "
+        class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-yellow-500 dark:bg-yellow-300 ring-transparent "
       >
         <ArrowLeft class="size-8" />
         <span class="sr-only">Previous</span>
@@ -55,7 +55,7 @@ import { dataCarousel } from "../data/carousel";
       data-carousel-next
     >
       <span
-        class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 dark:bg-yellow-300 group-focus:ring-4 ring-transparent"
+        class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-yellow-500 dark:bg-yellow-300 group-focus:ring-4 ring-transparent"
       >
         <Arrow class="size-8" />
         <span class="sr-only">Next</span>
@@ -63,12 +63,12 @@ import { dataCarousel } from "../data/carousel";
     </button>
   </div>
 </div>
-<div
+<section
   class="md:absolute md:top-40 right-0 gap-x-4 items-right w-full md:w-6/12 z-1 flex flex-row"
 >
   <a
     href=""
-    class="h-36 flex md:inline-flex md:items-center md:flex-row content-island md:h-24 gap-x-4"
+    class="h-36 border rounded-xl flex md:inline-flex md:items-center md:flex-row content-island md:h-24 gap-x-4"
   >
     <span class="mt-4 md:mt-0">
       <Document class="size-8"/>
@@ -94,7 +94,7 @@ import { dataCarousel } from "../data/carousel";
     </label>
     <span class="mt-4 md:mt-0"><Arrow class="size-8" /></span></a
   >
-</div>
+</section>
 
 <style>
   h2 {

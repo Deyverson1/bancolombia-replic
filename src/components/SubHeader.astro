@@ -1,21 +1,21 @@
 ---
 import HeaderMenu from "./HeaderMenu";
 ---
-<header
-  class="z-10 flex md:top-9 w-full text-white transition-transform duration-500 transform translate-y-0 md:flex justify-around px-4 bg-white"
+<section
+  class=" flex w-full px-20 text-white transition-transform duration-500 transform translate-y-0 md:flex justify-around bg-white"
 >
-  <figure class="">
+  <figure class="items-center flex">
     <a href="#"
       ><img
         src="Bancolombia.png"
         alt=""
-        class="object-cover w-6/12 md:w-48"
+        class="object-cover aspect-[16:9] w-48 "
       /></a
     >
   </figure>
   <HeaderMenu client:load/>
   <nav class="hidden md:flex">
-    <ul class="flex items-center text-black gap-2">
+    <ul class="flex items-center text-black gap-x-8">
       <li>Inicio</li>
       <li>Necesidades</li>
       <li>Productos y Servicios</li>
@@ -23,9 +23,9 @@ import HeaderMenu from "./HeaderMenu";
     </ul>
   </nav>
   <div class="hidden md:flex md:items-center text-black gap-x-4">
-    <div class="pt-2">
+    <div>
       <a
-        class="rounded-2xl buttonTramites text-gray-200 hover:text-white px-2 py-1"
+        class="rounded-2xl buttonTramites text-gray-200 hover:text-white px-2 "
       >
         Trámites Digitales
       </a>
@@ -35,7 +35,7 @@ import HeaderMenu from "./HeaderMenu";
         <select name="options" id="" class="bg-white">
           <option value="">Sucursal Virtual Personas</option>
           <option value="">Sucursal virtual Pymes</option>
-          <option value="">Sucursar Virtual Empresas</option>
+          <option value="">Sucursal Virtual Empresas</option>
           <option value="">Pagos PSE</option>
           <option value="">Ver mas</option>
         </select>
@@ -46,7 +46,7 @@ import HeaderMenu from "./HeaderMenu";
       </div>
     </div>
   </div>
-</header>
+</section>
 
 <script>
   let lastScrollTop = 0;
@@ -72,8 +72,7 @@ import HeaderMenu from "./HeaderMenu";
 </script>
 <style>
   li {
-    font-size: 13px;
-    padding: 15px 6px;
+    font-size: 15px;
     border-bottom: transparent;
   }
   li:hover {
@@ -88,41 +87,7 @@ import HeaderMenu from "./HeaderMenu";
   .buttonTramites {
     background-color: #292929;
   }
-  .buttonTramites::before {
-    content: "¡Nuevo!";
-    font-family: "Open Sans";
-    font-size: 10px;
-    color: #2c2a29;
-    font-weight: 600;
-    text-align: center;
-    line-height: 17px;
-    width: 54px;
-    height: 20px;
-    top: 10%;
-    right: 29%;
-    position: absolute;
-    border-radius: 20px;
-    background: #97999b;
-    border-width: 0.5px;
-    border-style: solid;
-    border-color: #97999b;
-    border-image: initial;
-    animation: fadein 2.5s cubic-bezier(0.39, 0.575, 0.565, 1) infinite both;
-  }
-  @keyframes fadein {
-    0% {
-      opacity: 0;
-      transform: scale(0);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(0.9);
-    }
-    100% {
-      opacity: 0;
-      transform: scale(1);
-    }
-  }
+  
   .select-container {
     box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
   }
